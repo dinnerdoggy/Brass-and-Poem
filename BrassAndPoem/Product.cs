@@ -6,8 +6,10 @@ public class Product
     public int ProductTypeId { get; set; }
 
     // Constructor
-    public Product(string name)
+    public Product(string name, decimal price, int productTypeId)
     {
-    
+        Name = name;
+        Price = price;
+        ProductTypeId = productTypeId;
     }
 }
