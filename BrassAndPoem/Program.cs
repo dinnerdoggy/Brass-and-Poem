@@ -14,7 +14,7 @@ ProductType type2 = new ProductType("Brass", 2);
 
 List<ProductType> productTypes = new List<ProductType> { type1, type2 };
 //put your greeting here
-string greeting = "○•Welcome to Brass & Poem•○";
+string greeting = "○•Welcome to Brass & Poem•○\n";
 //implement your loop here
 
 bool exit = false;
@@ -24,6 +24,7 @@ while (!exit)
     DisplayMenu();
     void DisplayMenu()
     {
+        Console.Clear();
         Console.WriteLine(greeting);
         Console.WriteLine("1. Display all products");
         Console.WriteLine("2. Delete a product");
