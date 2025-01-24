@@ -42,10 +42,10 @@ while (!exit)
                 Options.DeleteProduct(products, productTypes);
                 break;
             case 3:
-                AddProduct(products, productTypes);
+                Options.AddProduct(products, productTypes);
                 break;
             case 4:
-                UpdateProduct(products, productTypes);
+                Options.UpdateProduct(products, productTypes);
                 break;
             case 5:
                 Console.Clear();
@@ -54,16 +54,6 @@ while (!exit)
                 break;
     
         }
-    }
-    
-    void AddProduct(List<Product> products, List<ProductType> productTypes)
-    {
-        throw new NotImplementedException();
-    }
-    
-    void UpdateProduct(List<Product> products, List<ProductType> productTypes)
-    {
-        throw new NotImplementedException();
     }
 
     // Pause before redisplaying the menu
