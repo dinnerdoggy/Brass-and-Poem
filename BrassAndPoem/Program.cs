@@ -1,10 +1,10 @@
 ﻿using BrassAndPoem;
 //create a "products" variable here to include at least five Product instances. Give them appropriate ProductTypeIds.
-Product product1 = new Product("Leaves of Grass", 15.00m, 1);
-Product product2 = new Product("The Divine Comedy", 20.00m, 2);
-Product product3 = new Product("Trumbone", 1000.00m, 3);
-Product product4 = new Product("Howl and Other Poems by Allen Ginsberg", 30.00m, 4);
-Product product5 = new Product("Trumpet", 600.00m, 5);
+Product product1 = new Product("Leaves of Grass", 15.00m, 0);
+Product product2 = new Product("The Divine Comedy", 20.00m, 0);
+Product product3 = new Product("Trumbone", 1000.00m, 1);
+Product product4 = new Product("Howl by Allen Ginsberg", 30.00m, 0);
+Product product5 = new Product("Trumpet", 600.00m, 1);
 
 List<Product> products = new List<Product> { product1, product2, product3, product4, product5 };
 
@@ -21,6 +21,7 @@ bool exit = false;
 
 while (!exit)
 {
+    DisplayMenu();
     void DisplayMenu()
     {
         Console.WriteLine(greeting);
@@ -35,10 +36,10 @@ while (!exit)
         switch (choice)
         {
             case 1:
-                DisplayAllProducts(products, productTypes);
+                Options.DisplayAllProducts(products, productTypes);
                 break;
             case 2:
-                DeleteProduct(products, productTypes);
+                Options.DeleteProduct(products, productTypes);
                 break;
             case 3:
                 AddProduct(products, productTypes);
@@ -47,23 +48,12 @@ while (!exit)
                 UpdateProduct(products, productTypes);
                 break;
             case 5:
-                Console.WriteLine("☻ Happy tooting ☻");
+                Console.Clear();
+                Console.WriteLine("○•Happy tooting•○");
                 exit = true;
                 break;
     
         }
-    }
-    DisplayMenu();
-    
-    void DisplayAllProducts(List<Product> products, List<ProductType> productTypes)
-    {
-        Console.WriteLine("WOOOHOOOO");
-        throw new NotImplementedException();
-    }
-    
-    void DeleteProduct(List<Product> products, List<ProductType> productTypes)
-    {
-        throw new NotImplementedException();
     }
     
     void AddProduct(List<Product> products, List<ProductType> productTypes)
@@ -74,6 +64,14 @@ while (!exit)
     void UpdateProduct(List<Product> products, List<ProductType> productTypes)
     {
         throw new NotImplementedException();
+    }
+
+    // Pause before redisplaying the menu
+    if (!exit)
+    {
+        Console.WriteLine("\nPress Enter to return to the menu...");
+        Console.ReadLine();
+        Console.Clear();
     }
 
 }
